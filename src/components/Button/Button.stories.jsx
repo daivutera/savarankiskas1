@@ -6,12 +6,12 @@ export const Primary = () => (
     First button
   </Button>
 );
-export const Primary1 = () => (
+export const Success = () => (
   <Button color='success' type='reset'>
     First button
   </Button>
 );
-export const Primary2 = () => (
+export const Danger = () => (
   <Button color='danger' type='submit'>
     First button
   </Button>
