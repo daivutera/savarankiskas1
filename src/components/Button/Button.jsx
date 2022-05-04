@@ -2,23 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Button.styled';
 
-const color = {
-  primary: { background: 'red' },
-  secondary: { background: 'green' },
+const styleByProps = {
+  primary: { background: 'yellow' },
+  success: { background: 'rgb(30, 165, 30)' },
+  danger: { background: 'red' },
 };
-
-const Button = ({ children, type }) => {
+// Button (color: primary, success, danger; type: submit, reset, button).
+const Button = ({ children, color, type }) => {
   //color ar butina rasyt per propsa siuo atveju, jei virsuj pasirasiau?
-  return <S.Button gotTypeFromProps={color[type]}>{children}</S.Button>;
+  return (
+    <S.Button gotTypeFromProps={styleByProps[color]} type={type}>
+      {children}
+    </S.Button>
+  );
 };
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  type: PropTypes.oneOf(['primary', 'secondary']).isRequired,
+  color: PropTypes.oneOf(['primary', 'success, danger']).isRequired,
 };
 
 Button.defaultProps = {
-  type: 'secondary',
+  color: 'primary',
 };
 
 export default Button;
