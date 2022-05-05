@@ -4,7 +4,7 @@ export const Hero = styled.div`
   background: ${(props) => props.color.background};
   padding: 1rem;
   text-align: justify;
-  width: 15rem;
+  width: 50rem;
   border-radius: 5px;
 `;
 export const Heroh1 = styled.h1`
